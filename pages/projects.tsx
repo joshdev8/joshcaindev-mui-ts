@@ -3,9 +3,10 @@ import type { NextPage } from 'next';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Link from '../src/components/Link';
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
 	return (
 		<Container maxWidth="lg">
 			<Box
@@ -18,14 +19,11 @@ const Home: NextPage = () => {
 				}}
 			>
 				<Typography variant="h4" component="h1" gutterBottom>
-					Josh Cain Dev Portfolio
+					Projects
 				</Typography>
-				<Link href="/about" color="secondary">
-					Go to the about page
-				</Link>
 			</Box>
 		</Container>
 	);
 };
 
-export default Home;
+export default About;
