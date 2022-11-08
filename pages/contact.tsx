@@ -38,7 +38,7 @@ type FormValues = {
 	description: string;
 };
 
-const About: NextPage = () => {
+const Contact: NextPage = () => {
 	const [loading, setLoading] = React.useState(false);
 	const {
 		handleSubmit,
@@ -288,4 +288,4 @@ const About: NextPage = () => {
 	);
 };
 
-export default About;
+export default Contact;
