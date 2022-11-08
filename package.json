@@ -10,26 +10,34 @@
     "pretty": "prettier --use-tabs --single-quote --write \"**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@emotion/cache": "^11.10.1",
-    "@emotion/react": "^11.10.0",
+    "@emotion/cache": "^11.10.5",
+    "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "@mui/icons-material": "^5.8.4",
-    "@mui/material": "^5.10.1",
+    "@emotion/styled": "^11.10.5",
+    "@hookform/resolvers": "^2.9.10",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/lab": "^5.0.0-alpha.107",
+    "@mui/material": "^5.10.13",
+    "axios": "^1.1.3",
     "next": "12.2.3",
+    "nodemailer": "^6.8.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.39.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@types/node": "18.7.9",
-    "@types/react": "18.0.17",
-    "@types/react-dom": "18.0.6",
-    "eslint": "8.22.0",
-    "eslint-config-next": "12.2.4",
+    "@types/node": "18.11.9",
+    "@types/nodemailer": "^6.4.6",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.8",
+    "eslint": "8.27.0",
+    "eslint-config-next": "13.0.2",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
     "prettier-eslint": "^15.0.1",
-    "typescript": "4.7.4"
+    "typescript": "4.8.4",
+    "typescript-eslint": "^0.0.1-alpha.0"
   }
 }
