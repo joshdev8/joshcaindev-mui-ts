@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { Analytics } from '@vercel/analytics/react';
 import ResponsiveAppBar from '../src/components/AppBar/AppBar';
 import Copyright from '../src/components/Copyright';
 import { CacheProvider, EmotionCache } from '@emotion/react';
@@ -30,6 +31,7 @@ export default function MyApp(props: MyAppProps) {
 				<ResponsiveAppBar />
 				<Component {...pageProps} />
 				<Copyright />
+				<Analytics />
 			</ThemeProvider>
 		</CacheProvider>
 	);
