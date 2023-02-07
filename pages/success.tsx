@@ -19,7 +19,7 @@ const Success: NextPage = () => {
 				}}
 			>
 				<Typography variant="h4" component="h1" gutterBottom>
-					Success! Thank you for your message.
+					Thank you for your message.
 				</Typography>
 				<Box maxWidth="sm">
 					<Button variant="contained" component={Link} noLinkStyle href="/">

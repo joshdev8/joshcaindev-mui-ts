@@ -24,7 +24,6 @@ interface IPost {
 // post component with image and text
 
 const BlogCard = ({ post }: IPost) => {
-	console.log(post);
 	const { title, excerpt, date, cover_image } = post.frontmatter;
 
 	return (
@@ -34,46 +33,53 @@ const BlogCard = ({ post }: IPost) => {
 				margin: 2,
 				transition: '0.3s',
 				boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
+				textDecoration: 'none',
 				'&:hover': {
 					boxShadow: '0 16px 70px -12.125px rgba(0,0,0,0.3)',
 				},
 			}}
 		>
-			<CardMedia
-				image={
-					cover_image ??
-					'https://images.unsplash.com/photo-1517436073-3b1b1b7f8d9c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMHBob25lfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80'
-				}
-				sx={{
-					pt: '56.25%',
-				}}
-			/>
-			<CardContent
-				sx={{
-					textAlign: 'left',
-					padding: 3,
-				}}
-			>
-				<Typography sx={{ fontWeight: 'bold' }} variant={'h6'} gutterBottom>
-					{title ?? 'No title'}
-				</Typography>
-				<Typography sx={{ color: 'text.secondary' }} variant={'caption'}>
-					{excerpt ?? 'No excerpt'}
-				</Typography>
-				<Divider
+			<Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+				<CardMedia
+					image={
+						cover_image ??
+						'https://images.unsplash.com/photo-1517436073-3b1b1b7f8d9c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMHBob25lfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80'
+					}
 					sx={{
-						my: 2,
+						pt: '56.25%',
+						textDecoration: 'none',
 					}}
-					light
 				/>
-				<Typography
-					sx={{ color: 'text.secondary' }}
-					variant={'caption'}
-					component={'p'}
+				<CardContent
+					sx={{
+						textAlign: 'left',
+						padding: 3,
+						textDecoration: 'none',
+					}}
 				>
-					{date ?? 'No date'}
-				</Typography>
-			</CardContent>
+					<Typography
+						sx={{ fontWeight: 'bold', textDecoration: 'none' }}
+						variant={'h6'}
+						gutterBottom
+					>
+						{title ?? 'No title'}
+					</Typography>
+					<Typography
+						sx={{ color: 'text.secondary', textDecoration: 'none' }}
+						variant={'caption'}
+					>
+						{excerpt ?? 'No excerpt'}
+					</Typography>
+					<Divider sx={{ my: 2 }} light />
+					<Typography
+						sx={{ color: 'text.secondary', textDecoration: 'none' }}
+						variant={'caption'}
+						component={'p'}
+					>
+						{date ?? 'No date'}
+					</Typography>
+				</CardContent>
+			</Link>
 		</Card>
 	);
 };

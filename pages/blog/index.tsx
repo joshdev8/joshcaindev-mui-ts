@@ -17,7 +17,6 @@ interface Props {
 }
 
 const Blog = ({ posts }: Props) => {
-	console.log(posts);
 	return (
 		<Container maxWidth="lg">
 			<Box
