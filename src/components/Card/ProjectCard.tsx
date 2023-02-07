@@ -1,6 +1,5 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+import Card from './Card';
+import CardBody from './CardBody';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
@@ -22,17 +21,15 @@ const ProjectCard = ({
 	description,
 }: Props) => (
 	<Card sx={{ maxWidth: 345 }}>
-		<CardActionArea>
-			<CardMedia component="img" height="200" image={imageUrl} alt={imageAlt} />
-			<CardContent>
-				<Typography gutterBottom variant="h5" component="div">
-					{title}
-				</Typography>
-				<Typography variant="body2" color="text.secondary">
-					{description}
-				</Typography>
-			</CardContent>
-		</CardActionArea>
+		<CardMedia component="img" height="200" image={imageUrl} alt={imageAlt} />
+		<CardBody>
+			<Typography gutterBottom variant="h5" component="div">
+				{title}
+			</Typography>
+			<Typography variant="body2" color="text.secondary">
+				{description}
+			</Typography>
+		</CardBody>
 		<CardActions>
 			<Link
 				href={projectUrl}
@@ -42,7 +39,7 @@ const ProjectCard = ({
 				underline="none"
 				color="secondary"
 			>
-				<Button size="small" color="primary">
+				<Button size="small" color="secondary">
 					Visit
 				</Button>
 			</Link>

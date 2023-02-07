@@ -1,9 +1,10 @@
-import * as React from 'react';
 import type { NextPage } from 'next';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import {
+	Box,
+	Container,
+	Grid,
+	Typography,
+} from '@mui/material';
 import ProjectCard from '../src/components/Card/ProjectCard';
 
 const projects = [
@@ -45,10 +46,10 @@ const Projects: NextPage = () => {
 				<Typography variant="h4" component="h1" gutterBottom>
 					Some recent projects I have been working on
 				</Typography>
-				<Grid container spacing={2} sx={{ mt: 4 }}>
+				<Grid container spacing={2} sx={{ mt: 2 }}>
 					{projects?.map(
 						({ projectUrl, imageUrl, imageAlt, title, description }) => (
-							<Grid key={title} item xs={6} md={4}>
+							<Grid key={title} item xs={12} sm={6} md={4}>
 								<ProjectCard
 									projectUrl={projectUrl}
 									imageUrl={imageUrl}

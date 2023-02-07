@@ -237,7 +237,7 @@ const Contact: NextPage = () => {
 											defaultValue=""
 											render={({ field }) => (
 												<CustomInput
-													labelText="Please describe the work you would like done"
+													labelText="More info"
 													error={
 														errors?.description?.message &&
 														errors?.description?.message?.length > 0
@@ -272,9 +272,9 @@ const Contact: NextPage = () => {
 									<LoadingButton
 										onClick={handleSubmit(onSubmitForm)}
 										disabled={loading}
-										color="success"
-										round
+										color="primary"
 										loading={loading}
+										sx={{ fontWeight: 'bold' }}
 									>
 										Send Message
 									</LoadingButton>
