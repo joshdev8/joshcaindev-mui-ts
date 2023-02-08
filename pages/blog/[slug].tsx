@@ -38,12 +38,10 @@ const BlogPost = ({
 			>
 				<Box
 					sx={{
-						my: 4,
 						display: 'flex',
 						flexDirection: 'column',
 						justifyContent: 'center',
 						alignItems: 'center',
-						p: 4,
 					}}
 				>
 					<Typography
@@ -51,8 +49,8 @@ const BlogPost = ({
 						component="h1"
 						gutterBottom
 						sx={{
-							mt: 4,
-							mb: 4,
+							m: 4,
+							px: 6,
 							fontSize: '2.5rem',
 							fontWeight: 'bold',
 							textAlign: 'center',
@@ -67,6 +65,7 @@ const BlogPost = ({
 							mb: 4,
 							fontSize: '1rem',
 							textAlign: 'center',
+							px: 6,
 						}}
 					>
 						{date}
@@ -74,7 +73,6 @@ const BlogPost = ({
 					<Image src={cover_image} alt={title} width={500} height={400} />
 					<Box
 						sx={{
-							my: 4,
 							display: 'flex',
 							flexDirection: 'column',
 							justifyContent: 'center',
@@ -84,7 +82,7 @@ const BlogPost = ({
 						<Typography
 							variant="body1"
 							component="div"
-							sx={{ mt: 4, mb: 4, fontSize: '1.2rem', p: 4 }}
+							sx={{ mt: 4, mb: 4, fontSize: '1.2rem', px: 12 }}
 							dangerouslySetInnerHTML={{ __html: marked(content) }}
 						/>
 						<Link href="/blog">Go Back</Link>

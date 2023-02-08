@@ -54,7 +54,10 @@ const BlogCard = ({ post }: IPost) => {
 					}}
 				>
 					<Typography
-						sx={{ fontWeight: 'bold', textDecoration: 'none' }}
+						sx={{
+							fontWeight: 'bold',
+							textDecoration: 'none'
+						}}
 						variant={'h6'}
 						gutterBottom
 					>
