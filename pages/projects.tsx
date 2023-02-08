@@ -13,21 +13,21 @@ const projects = [
 		imageUrl: '/img/greenState.png',
 		imageAlt: 'Green State Builders website image',
 		title: 'Green State Builders',
-		description: 'Company website - Built with: NextJS, Material UI, Vercel',
+		description: 'Company website - NextJS, Material UI, Vercel',
 	},
 	{
 		projectUrl: 'https://limbcorp.com',
 		imageUrl: '/img/limbScreen.png',
 		imageAlt: 'Limb Corp website image',
 		title: 'Limb Corp',
-		description: 'Company website - Built with: NextJS, Material UI, Vercel',
+		description: 'Company website - NextJS, Material UI, Vercel',
 	},
 	{
 		projectUrl: 'https://sunny-clock.com',
 		imageUrl: '/img/sunnyClock.png',
 		imageAlt: 'Always Sunny Clock image',
 		title: 'Always Sunny Clock',
-		description: 'Project I made for fun - Built with: React, Vercel',
+		description: 'Project I made for fun - React, Vercel',
 	},
 ];
 

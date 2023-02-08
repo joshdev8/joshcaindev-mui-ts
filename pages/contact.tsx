@@ -1,7 +1,6 @@
 import * as React from 'react';
 import type { NextPage } from 'next';
 import { Container, Typography, Box } from '@mui/material';
-
 import * as yup from 'yup';
 import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios';
@@ -11,13 +10,12 @@ import { server } from '../config/index';
 import { encodeContact } from '../src/helpers/email';
 import GridItem from '../src/components/Grid/GridItem';
 import GridContainer from '../src/components/Grid/GridContainer';
-import CardHeader from '../src/components/Card/CardHeader';
-import CardBody from '../src/components/Card/CardBody';
-import CardFooter from '../src/components/Card/CardFooter';
-import Card from '../src/components/Card/Card';
+import CardHeader from '../src/components/Form/CardHeader';
+import CardBody from '../src/components/Form/CardBody';
+import CardFooter from '../src/components/Form/CardFooter';
+import Card from '../src/components/Form/Card';
 import CustomInput from '../src/components/CustomInput/CustomInput';
 import LoadingButton from '../src/components/Button/LoadingButton';
-
 import formStyle from '../styles/jss/components/form';
 
 const phoneRegExp = /^(1)?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;

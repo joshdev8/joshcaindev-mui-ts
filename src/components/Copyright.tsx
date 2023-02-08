@@ -1,15 +1,24 @@
 import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import MuiLink from '@mui/material/Link';
+import { Box, Link, Typography } from '@mui/material';
 
 export default function Copyright() {
 	return (
-		<Typography variant="body2" color="text.secondary" align="center">
-			{'Copyright © '}
-			<MuiLink color="inherit" href="https://mui.com/">
-				Josh Cain
-			</MuiLink>{' '}
-			{new Date().getFullYear()}.
-		</Typography>
+		<Box
+			sx={{
+				pt: 4,
+				mt: 8,
+				borderTop: theme => `1px solid ${theme.palette.divider}`,
+				pb: 2,
+				mb: 2,
+			}}
+		>
+			<Typography variant="body2" color="text.secondary" align="center">
+				{'Copyright © '}
+				<Link color="inherit" href="https://joshcaindev.com/">
+					Josh Cain
+				</Link>{' '}
+				{new Date().getFullYear()}.
+			</Typography>
+		</Box>
 	);
 }

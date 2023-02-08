@@ -18,17 +18,25 @@ interface Props {
 
 const Blog = ({ posts }: Props) => {
 	return (
-		<Container maxWidth="lg">
+		<Container
+			maxWidth="lg"
+		>
 			<Box
 				sx={{
-					my: 4,
 					display: 'flex',
 					flexDirection: 'column',
 					justifyContent: 'center',
 					alignItems: 'center',
 				}}
 			>
-				<Grid container spacing={2} sx={{ mt: 2 }}>
+				<Grid container spacing={2} sx={{
+					mt: 2,
+					display: 'flex',
+					flexDirection: 'row',
+					justifyContent: 'center',
+					alignItems: 'center',
+					p: 2,
+				}}>
 					{posts.map((post, index) => (
 						<Box key={post.frontmatter.title}>
 							<BlogCard post={post} />

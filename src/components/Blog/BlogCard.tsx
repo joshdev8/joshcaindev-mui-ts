@@ -1,4 +1,3 @@
-// @mui/material blog post component
 import {
 	Card,
 	CardMedia,
@@ -6,7 +5,6 @@ import {
 	Typography,
 	Divider,
 } from '@mui/material';
-import Image from 'next/image';
 import Link from '../Link';
 
 interface IPost {
@@ -21,8 +19,6 @@ interface IPost {
 	};
 }
 
-// post component with image and text
-
 const BlogCard = ({ post }: IPost) => {
 	const { title, excerpt, date, cover_image } = post.frontmatter;
 
@@ -35,7 +31,7 @@ const BlogCard = ({ post }: IPost) => {
 				boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
 				textDecoration: 'none',
 				'&:hover': {
-					boxShadow: '0 16px 70px -12.125px rgba(0,0,0,0.3)',
+					boxShadow: '0 16px 70px -12.125px rgba(0,0,0,0.7)',
 				},
 			}}
 		>
