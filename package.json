@@ -29,7 +29,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.43.2",
     "react-social-icons": "^5.15.0",
-    "yup": "^1.0.0"
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "@types/marked": "^4.0.8",
