@@ -8,8 +8,33 @@
       "type": "image/x-icon"
     },
     {
-      "src": "apple-touch-icon.png",
-      "sizes": "180x180",
+      "src": "icons8-star-50.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    },
+    {
+      "src": "icons8-star-100.png",
+      "sizes": "100x100",
+      "type": "image/png"
+    },
+    {
+      "src": "icons8-star-bubbles-16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "icons8-star-bubbles-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "icons8-star-bubbles-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "icons8-star-bubbles-96.png",
+      "sizes": "96x96",
       "type": "image/png"
     }
   ],
