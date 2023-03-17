@@ -31,7 +31,7 @@ const Home: NextPage = () => {
 					alignItems: 'center',
 				}}
 			>
-				<Typography variant="h6" component="h3" gutterBottom>
+				<Typography variant="body1" component="h4" gutterBottom>
 					I specialize in using React and NextJS to bring ideas to life. With a
 					focus on serverless full-stack development, I have a deep
 					understanding of how to create seamless and scalable web experiences
