@@ -5,11 +5,16 @@ import Technologies from '../src/sections/Technologies';
 
 const Home: NextPage = () => {
 	return (
-		<Container maxWidth="lg">
+		<Container
+			maxWidth="lg"
+			sx={{
+				p: 2,
+			}}
+		>
 			{/* Hero */}
 			<Box sx={{ my: 4 }}>
 				<Typography variant="h4" component="h1" gutterBottom>
-					Hi, I'm <span style={{ color: '#3f51b5' }}>Josh</span>.
+					Hi, I'm Josh.
 				</Typography>
 				<Typography variant="h6" component="h2" gutterBottom>
 					I'm a user interface engineer with a passion for building modern and
