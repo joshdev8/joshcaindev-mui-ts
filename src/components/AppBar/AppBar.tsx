@@ -31,18 +31,22 @@ const ResponsiveAppBar = () => {
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Typography
-						variant="h6"
+						variant="h5"
 						noWrap
 						component="div"
-						sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+						sx={{
+							mr: 2,
+							fontWeight: 'bold',
+							display: { xs: 'none', md: 'flex' },
+						}}
 					>
-						joshcaindev
+						josh cain
 					</Typography>
 
 					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
 						<IconButton
 							size="large"
-							aria-label="account of current user"
+							aria-label="menu icon"
 							aria-controls="menu-appbar"
 							aria-haspopup="true"
 							onClick={handleOpenNavMenu}
@@ -71,16 +75,21 @@ const ResponsiveAppBar = () => {
 							{pages.map(page => {
 								const path = page === 'home' ? '/' : `/${page}`;
 								return (
-									<Link key={page} href={path} underline="none">
-										<MenuItem onClick={handleCloseNavMenu}>
-											<Typography
-												textAlign="center"
-												sx={{ textTransform: 'capitalize' }}
-											>
-												{page}
-											</Typography>
-										</MenuItem>
-									</Link>
+									<MenuItem
+										onClick={handleCloseNavMenu}
+										key={page}
+										sx={{
+											'&.MuiButton-root': {
+												fontSize: '1.2rem',
+												lineHeight: '2.75',
+												padding: '6px 16px',
+											},
+										}}
+									>
+										<Link href={path} underline="none">
+											{page}
+										</Link>
+									</MenuItem>
 								);
 							})}
 						</Menu>
@@ -91,16 +100,25 @@ const ResponsiveAppBar = () => {
 						component="div"
 						sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
 					>
-						joshcaindev
+						josh cain
 					</Typography>
 					<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 						{pages.map(page => {
 							const path = page === 'home' ? '/' : `/${page}`;
 							return (
-								<Link key={page} href={path} underline="none">
+								<Link key={path} href={path} underline="none">
 									<Button
 										onClick={handleCloseNavMenu}
-										sx={{ my: 2, color: 'white', display: 'block' }}
+										sx={{
+											my: 2,
+											color: 'white',
+											display: 'block',
+											fontSize: '1.2rem',
+											lineHeight: '2.75',
+											padding: '6px 16px',
+											// lowercase
+											textTransform: 'lowercase',
+										}}
 									>
 										{page}
 									</Button>

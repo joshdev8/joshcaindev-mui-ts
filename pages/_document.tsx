@@ -10,6 +10,16 @@ export default class MyDocument extends Document {
 			<Html lang="en">
 				<Head>
 					<meta name="theme-color" content={theme.palette.primary.main} />
+					<meta
+						property="og:description"
+						// eslint-disable-next-line max-len
+						content="Josh Cain - Portfolio Site"
+					/>
+					<meta
+						property="og:title"
+						// eslint-disable-next-line max-len
+						content="Josh Cain - Portfolio"
+					/>
 					<link
 						rel="stylesheet"
 						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
