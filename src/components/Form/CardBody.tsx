@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Box } from '@mui/material';
 import styles from '../../../styles/jss/components/cardBodyStyle';
 
@@ -17,14 +16,12 @@ interface Props {
 
 export default function CardBody(props: Props) {
 	const {
-		className,
 		children,
 		background,
 		plain,
 		formHorizontal,
 		pricing,
 		signup,
-		color,
 		sx,
 		...rest
 	} = props;

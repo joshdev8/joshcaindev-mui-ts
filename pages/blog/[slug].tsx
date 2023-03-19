@@ -20,6 +20,7 @@ interface Props {
 
 const BlogPost = ({
 	frontmatter: { title, date, cover_image },
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	slug,
 	content,
 }: Props) => {

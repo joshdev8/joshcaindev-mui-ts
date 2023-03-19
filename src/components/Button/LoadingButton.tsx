@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 import { LoadingButton } from '@mui/lab';
 
@@ -35,6 +36,7 @@ const RegularLoadingButton = React.forwardRef<HTMLButtonElement, Props>(
 			link,
 			justIcon,
 			fileButton,
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			className,
 			sx,
 			...rest

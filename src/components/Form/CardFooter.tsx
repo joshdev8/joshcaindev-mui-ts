@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Box } from '@mui/material';
 
 interface Props {
@@ -38,6 +37,7 @@ const styles = {
 
 export default function CardFooter(props: Props) {
 	const {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		className,
 		children,
 		plain,
@@ -64,12 +64,3 @@ export default function CardFooter(props: Props) {
 		</Box>
 	);
 }
-
-CardFooter.propTypes = {
-	className: PropTypes.string,
-	plain: PropTypes.bool,
-	profile: PropTypes.bool,
-	pricing: PropTypes.bool,
-	testimonial: PropTypes.bool,
-	children: PropTypes.node,
-};

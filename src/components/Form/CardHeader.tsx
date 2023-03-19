@@ -16,8 +16,10 @@ interface Props {
 
 export default function CardHeader(props: Props) {
 	const {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		className,
 		children,
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		color,
 		plain,
 		image,
