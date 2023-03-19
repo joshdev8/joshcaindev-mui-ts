@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { Box, Container, Grid, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
 import ProjectCard from '../src/components/Card/ProjectCard';
 
 const projects = [
@@ -26,6 +27,32 @@ const projects = [
 	},
 ];
 
+const cardVariants = {
+	offscreen: {
+		y: 100,
+		opacity: 0.2,
+	},
+	onscreen: {
+		y: 0,
+		opacity: 1,
+		transition: {
+			type: 'spring',
+			bounce: 0.4,
+			duration: 0.8,
+		},
+	},
+};
+const cardVariants2 = {
+	...cardVariants,
+	onscreen: {
+		...cardVariants.onscreen,
+		transition: {
+			...cardVariants.onscreen.transition,
+			duration: 1.5,
+		},
+	},
+};
+
 const Projects: NextPage = () => {
 	return (
 		<Container maxWidth="lg">
@@ -45,13 +72,21 @@ const Projects: NextPage = () => {
 					{projects?.map(
 						({ projectUrl, imageUrl, imageAlt, title, description }) => (
 							<Grid key={title} item xs={12} sm={6} md={4}>
-								<ProjectCard
-									projectUrl={projectUrl}
-									imageUrl={imageUrl}
-									imageAlt={imageAlt}
-									title={title}
-									description={description}
-								/>
+								<motion.div
+									initial="offscreen"
+									whileInView="onscreen"
+									viewport={{ once: true, amount: 0.2 }}
+								>
+									<motion.div className="card" variants={cardVariants2}>
+										<ProjectCard
+											projectUrl={projectUrl}
+											imageUrl={imageUrl}
+											imageAlt={imageAlt}
+											title={title}
+											description={description}
+										/>
+									</motion.div>
+								</motion.div>
 							</Grid>
 						)
 					)}
