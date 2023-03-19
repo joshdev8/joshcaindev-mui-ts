@@ -23,10 +23,6 @@ const theme = createTheme({
 			main: green[500],
 			dark: green[700],
 		},
-		background: {
-			// set the background to a high-res image of code
-			default: 'url(https://source.unsplash.com/featured/?code)',
-		},
 	},
 	typography: {
 		fontFamily: montserrat.style.fontFamily,

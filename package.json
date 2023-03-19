@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pretty": "prettier --use-tabs --single-quote --write \"**/*.{ts,tsx}\""
+    "pretty": "prettier --use-tabs --single-quote --write \"**/*.{ts,tsx}\"",
+    "test": "jest"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.5",
@@ -32,6 +33,10 @@
     "yup": "^1.0.2"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@tsconfig/next": "^1.0.5",
+    "@types/jest": "^29.5.0",
     "@types/marked": "^4.0.8",
     "@types/node": "18.15.3",
     "@types/nodemailer": "^6.4.7",
@@ -41,8 +46,12 @@
     "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "prettier": "^2.8.4",
     "prettier-eslint": "^15.0.1",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
     "typescript": "4.9.5",
     "typescript-eslint": "^0.0.1-alpha.0"
   }
