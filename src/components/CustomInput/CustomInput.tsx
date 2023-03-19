@@ -1,9 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Input from '@mui/material/Input';
-// @mui/icons-material
 import Clear from '@mui/icons-material/Clear';
 import Check from '@mui/icons-material/Check';
 
@@ -31,7 +29,6 @@ export default function CustomInput(props: Props) {
 		inputProps,
 		error,
 		white,
-		inputRootCustomClasses,
 		success,
 		sx,
 	} = props;

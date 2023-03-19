@@ -1,10 +1,5 @@
 import type { NextPage } from 'next';
-import {
-	Box,
-	Container,
-	Grid,
-	Typography,
-} from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import ProjectCard from '../src/components/Card/ProjectCard';
 
 const projects = [

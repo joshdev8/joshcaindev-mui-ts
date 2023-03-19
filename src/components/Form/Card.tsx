@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Box } from '@mui/material';
 import styles from '../../../styles/jss/components/card';
 
@@ -22,9 +21,11 @@ interface Props {
 
 export default function Card(props: Props) {
 	const {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		className,
 		children,
 		plain,
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		profile,
 		blog,
 		raised,
@@ -32,6 +33,7 @@ export default function Card(props: Props) {
 		pricing,
 		color,
 		product,
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		testimonial,
 		sx,
 		...rest

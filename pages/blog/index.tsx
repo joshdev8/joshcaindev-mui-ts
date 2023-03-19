@@ -18,9 +18,7 @@ interface Props {
 
 const Blog = ({ posts }: Props) => {
 	return (
-		<Container
-			maxWidth="lg"
-		>
+		<Container maxWidth="lg">
 			<Box
 				sx={{
 					display: 'flex',
@@ -29,15 +27,19 @@ const Blog = ({ posts }: Props) => {
 					alignItems: 'center',
 				}}
 			>
-				<Grid container spacing={2} sx={{
-					mt: 2,
-					display: 'flex',
-					flexDirection: 'row',
-					justifyContent: 'center',
-					alignItems: 'center',
-					p: 2,
-				}}>
-					{posts.map((post, index) => (
+				<Grid
+					container
+					spacing={2}
+					sx={{
+						mt: 2,
+						display: 'flex',
+						flexDirection: 'row',
+						justifyContent: 'center',
+						alignItems: 'center',
+						p: 2,
+					}}
+				>
+					{posts.map(post => (
 						<Box key={post.frontmatter.title}>
 							<BlogCard post={post} />
 						</Box>

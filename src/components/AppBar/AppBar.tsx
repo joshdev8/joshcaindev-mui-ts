@@ -11,7 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Link from '../Link';
 
-const pages = ['home', 'projects', 'contact', 'blog'];
+const pages = ['home', 'projects', 'blog', 'contact'];
 
 const ResponsiveAppBar = () => {
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -35,7 +35,6 @@ const ResponsiveAppBar = () => {
 						noWrap
 						component="div"
 						sx={{
-							mr: 2,
 							fontWeight: 'bold',
 							display: { xs: 'none', md: 'flex' },
 						}}
@@ -75,21 +74,20 @@ const ResponsiveAppBar = () => {
 							{pages.map(page => {
 								const path = page === 'home' ? '/' : `/${page}`;
 								return (
-									<MenuItem
-										onClick={handleCloseNavMenu}
-										key={page}
-										sx={{
-											'&.MuiButton-root': {
-												fontSize: '1.2rem',
-												lineHeight: '2.75',
-												padding: '6px 16px',
-											},
-										}}
-									>
-										<Link href={path} underline="none">
+									<Link href={path} key={page} underline="none">
+										<MenuItem
+											onClick={handleCloseNavMenu}
+											sx={{
+												'&.MuiButton-root': {
+													fontSize: '1.2rem',
+													lineHeight: '2.75',
+													padding: '6px 16px',
+												},
+											}}
+										>
 											{page}
-										</Link>
-									</MenuItem>
+										</MenuItem>
+									</Link>
 								);
 							})}
 						</Menu>

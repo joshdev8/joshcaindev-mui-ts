@@ -14,13 +14,13 @@ interface Request {
 
 interface Response {
 	status: (arg0: number) => {
-		(): any;
-		new (): any;
+		(): unknown;
+		new (): unknown;
 		json: {
-			(arg0: { message?: string; body: string | object }): any;
-			new (): any;
+			(arg0: { message?: string; body: string | object }): unknown;
+			new (): unknown;
 		};
-		end: { (): any; new (): any };
+		end: { (): unknown; new (): unknown };
 	};
 	setHeader: (arg0: string, arg1: string | boolean) => void;
 }
@@ -73,7 +73,7 @@ const handler = async (req: Request, res: Response) => {
 			},
 		});
 
-		let mailOptions = {
+		const mailOptions = {
 			from: 'Josh Cain Dev Portfolio <joshcaindev@gmail.com>',
 			to: `${dest}`,
 			subject: 'New Contact Form Submission', // email subject

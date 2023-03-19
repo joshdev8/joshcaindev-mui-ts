@@ -15,7 +15,7 @@ const Technologies = () => {
 				alignItems: 'center',
 			}}
 		>
-			{technologies.map((tech, index) => (
+			{technologies.map(tech => (
 				<Box key={tech.name}>
 					<TechCard tech={tech} />
 				</Box>

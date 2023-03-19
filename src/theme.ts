@@ -26,7 +26,7 @@ const theme = createTheme({
 	},
 	typography: {
 		fontFamily: montserrat.style.fontFamily,
-	}
+	},
 });
 
 export default theme;

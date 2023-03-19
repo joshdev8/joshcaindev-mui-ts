@@ -21,6 +21,7 @@ const styles = {
 };
 
 export default function GridItem(props: Props) {
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const { children, className, sx, ...rest } = props;
 	return (
 		<Grid

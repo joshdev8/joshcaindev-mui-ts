@@ -1,10 +1,4 @@
-import {
-	Card,
-	CardMedia,
-	CardContent,
-	Typography,
-	Divider,
-} from '@mui/material';
+import { Card, CardMedia, CardContent, Typography } from '@mui/material';
 import Link from '../../../src/components/Link';
 
 interface ITech {
