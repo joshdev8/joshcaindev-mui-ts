@@ -1,4 +1,4 @@
-import { Box, Grid } from '@mui/material';
+import { Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import TechCard from '../components/Card/TechCard';
 import { technologies } from '../data/technologies';
@@ -18,13 +18,13 @@ const cardVariants = {
 		},
 	},
 };
+
 const cardVariants2 = {
 	...cardVariants,
 	onscreen: {
 		...cardVariants.onscreen,
 		transition: {
 			...cardVariants.onscreen.transition,
-			duration: 1.5,
 		},
 	},
 };
@@ -42,19 +42,18 @@ const Technologies = () => {
 				alignItems: 'center',
 			}}
 		>
-			{technologies.map(tech => (
+			{technologies.map((tech, index) => (
 				<motion.div
 					initial="offscreen"
 					whileInView="onscreen"
 					viewport={{ once: true, amount: 0.2 }}
 					key={tech.name}
-					whileHover={{ scale: 1.1 }}
-					whileTap={{ scale: 0.9 }}
 				>
-					<motion.div className="card" variants={cardVariants2}>
-						<Box>
-							<TechCard tech={tech} />
-						</Box>
+					<motion.div
+						className="card"
+						variants={index % 2 ? cardVariants2 : cardVariants}
+					>
+						<TechCard tech={tech} />
 					</motion.div>
 				</motion.div>
 			))}

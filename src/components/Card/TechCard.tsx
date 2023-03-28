@@ -22,14 +22,16 @@ const TechCard = ({ tech: { name, image, description, url } }: ITech) => {
 		>
 			<Card
 				sx={{
-					height: 150,
-					width: 150,
+					height: 170,
+					width: 170,
 					margin: 2,
 					transition: '0.3s',
 					boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
 					textDecoration: 'none',
+					borderRadius: '10px',
 					'&:hover': {
 						boxShadow: '0 16px 70px -12.125px rgba(0,0,0,0.3)',
+						scale: 1.1,
 					},
 				}}
 				aria-label={description}
@@ -38,6 +40,8 @@ const TechCard = ({ tech: { name, image, description, url } }: ITech) => {
 					image={image}
 					sx={{
 						pt: '56.25%',
+						backgroundSize: 'contain',
+						mt: '10px'
 					}}
 				/>
 				<CardContent
