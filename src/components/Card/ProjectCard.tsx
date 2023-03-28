@@ -1,4 +1,11 @@
-import { CardMedia, Typography, Card, CardContent } from '@mui/material';
+import {
+	CardMedia,
+	Typography,
+	Card,
+	CardContent,
+	CardActions,
+	Button,
+} from '@mui/material';
 import Link from '../Link';
 
 interface Props {
@@ -7,6 +14,8 @@ interface Props {
 	imageAlt: string;
 	title: string;
 	description: string;
+	privateRepo: boolean;
+	repoLink: string;
 }
 
 const ProjectCard = ({
@@ -15,6 +24,8 @@ const ProjectCard = ({
 	imageAlt,
 	title,
 	description,
+	privateRepo,
+	repoLink,
 }: Props) => (
 	<Card
 		sx={{
@@ -23,8 +34,10 @@ const ProjectCard = ({
 			transition: '0.3s',
 			boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
 			textDecoration: 'none',
+			borderRadius: '10px',
 			'&:hover': {
-				boxShadow: '0 16px 70px -12.125px rgba(0,0,0,0.7)',
+				boxShadow: '0 16px 70px -12.125px rgba(0,0,0,0.3)',
+				scale: 1.1,
 			},
 		}}
 	>
@@ -42,6 +55,7 @@ const ProjectCard = ({
 				sx={{
 					pt: '56.25%',
 					textDecoration: 'none',
+					backgroundPosition: 'initial',
 				}}
 				aria-label={imageAlt}
 			/>
@@ -60,13 +74,40 @@ const ProjectCard = ({
 					{title ?? 'No title'}
 				</Typography>
 				<Typography
-					sx={{ color: 'text.secondary', textDecoration: 'none' }}
-					variant={'caption'}
+					sx={{ color: 'black', textDecoration: 'none', fontWeight: 'bold' }}
+					variant={'body2'}
 				>
-					{description ?? 'No excerpt'}
+					{description ?? 'No description'}
 				</Typography>
 			</CardContent>
 		</Link>
+		<CardActions>
+			<Link
+				href={repoLink}
+				style={{ textDecoration: 'none' }}
+				// open in new tab
+				target="_blank"
+			>
+				<Button
+					size="large"
+					color="primary"
+					sx={{ fontWeight: 'bold' }}
+					disabled={privateRepo}
+				>
+					Github {privateRepo ? '🔒' : ''}
+				</Button>
+			</Link>
+			<Link
+				href={projectUrl}
+				style={{ textDecoration: 'none' }}
+				// open in new tab
+				target="_blank"
+			>
+				<Button size="large" color="warning" sx={{ fontWeight: 'bold' }}>
+					Visit
+				</Button>
+			</Link>
+		</CardActions>
 	</Card>
 );
 

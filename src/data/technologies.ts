@@ -67,11 +67,4 @@ export const technologies = [
 			'Amazon Web Services (AWS) is a secure cloud services platform, offering compute power, database storage, content delivery and other functionality to help businesses scale and grow.',
 		image: '/img/tech/aws.png',
 	},
-	{
-		name: 'Vercel',
-		url: 'https://vercel.com/',
-		description:
-			'Vercel is a cloud platform for static sites, hybrid apps, and Serverless Functions.',
-		image: '/img/tech/vercel.png',
-	},
 ];
