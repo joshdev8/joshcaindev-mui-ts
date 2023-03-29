@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import { Container, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import ProjectCard from '../src/components/Card/ProjectCard';
+import { cardVariants, cardVariants2 } from '../src/animations/cards';
 
 const projects = [
 	{
@@ -55,32 +56,6 @@ const projects = [
 		repoLink: 'https://github.com/joshdev8/joshcaindev-mui-ts',
 	},
 ];
-
-const cardVariants = {
-	offscreen: {
-		y: 100,
-		opacity: 0.2,
-	},
-	onscreen: {
-		y: 0,
-		opacity: 1,
-		transition: {
-			type: 'spring',
-			bounce: 0.4,
-			duration: 0.8,
-		},
-	},
-};
-const cardVariants2 = {
-	...cardVariants,
-	onscreen: {
-		...cardVariants.onscreen,
-		transition: {
-			...cardVariants.onscreen.transition,
-			duration: 1.5,
-		},
-	},
-};
 
 const Projects: NextPage = () => {
 	return (

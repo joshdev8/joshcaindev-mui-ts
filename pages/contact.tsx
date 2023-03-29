@@ -18,6 +18,7 @@ import Card from '../src/components/Form/Card';
 import CustomInput from '../src/components/CustomInput/CustomInput';
 import LoadingButton from '../src/components/Button/LoadingButton';
 import formStyle from '../styles/jss/components/form';
+import { cardVariants } from '../src/animations/cards';
 
 const phoneRegExp = /^(1)?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
 
@@ -87,207 +88,199 @@ const Contact: NextPage = () => {
 					alignItems: 'center',
 				}}
 			>
-				{/* <Typography variant="h4" component="h1" gutterBottom>
-					Contact
-				</Typography> */}
 				<Box maxWidth="sm">
 					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ delay: 0.5 }}
+						initial="offscreen"
+						whileInView="onscreen"
+						viewport={{ once: true, amount: 0.2 }}
 					>
-						<Card
-							sx={{
-								...formStyle.card1,
-							}}
-						>
-							<form onSubmit={handleSubmit(onSubmitForm)}>
-								<CardHeader
-									contact
-									color="success"
-									sx={{
-										...formStyle.textCenter,
-									}}
-								>
-									<Typography
-										component="h4"
+						<motion.div className="card" variants={cardVariants}>
+							<Card
+								sx={{
+									...formStyle.card1,
+								}}
+							>
+								<form onSubmit={handleSubmit(onSubmitForm)}>
+									<CardHeader
+										contact
+										color="success"
 										sx={{
-											...formStyle.cardTitle,
+											...formStyle.textCenter,
 										}}
 									>
-										<Typography variant="h4" component="h1" gutterBottom>
+										<Typography variant="h4" gutterBottom>
 											Contact
 										</Typography>
-									</Typography>
-								</CardHeader>
-								<CardBody>
-									<GridContainer>
-										<GridItem xs={12} sm={6} md={6}>
-											<Controller
-												name="firstName"
-												control={control}
-												defaultValue=""
-												render={({ field }) => (
-													<CustomInput
-														inputProps={{
-															...field,
-															inputProps: {
-																role: 'text',
-																'aria-label': 'First Name',
-															},
-														}}
-														labelText="First Name"
-														formControlProps={{
-															fullWidth: true,
-														}}
-														error={
-															errors?.firstName?.message &&
-															errors?.firstName?.message?.length > 0
-														}
-													/>
+									</CardHeader>
+									<CardBody>
+										<GridContainer>
+											<GridItem xs={12} sm={6} md={6}>
+												<Controller
+													name="firstName"
+													control={control}
+													defaultValue=""
+													render={({ field }) => (
+														<CustomInput
+															inputProps={{
+																...field,
+																inputProps: {
+																	role: 'text',
+																	'aria-label': 'First Name',
+																},
+															}}
+															labelText="First Name"
+															formControlProps={{
+																fullWidth: true,
+															}}
+															error={
+																errors?.firstName?.message &&
+																errors?.firstName?.message?.length > 0
+															}
+														/>
+													)}
+												/>
+												<p>{errors?.firstName?.type}</p>
+											</GridItem>
+											<GridItem xs={12} sm={6} md={6}>
+												<Controller
+													name="lastName"
+													control={control}
+													defaultValue=""
+													render={({ field }) => (
+														<CustomInput
+															inputProps={{
+																...field,
+																inputProps: {
+																	role: 'text',
+																	'aria-label': 'Last Name',
+																},
+															}}
+															labelText="Last Name"
+															formControlProps={{
+																fullWidth: true,
+															}}
+															error={
+																errors?.lastName?.message &&
+																errors?.lastName?.message?.length > 0
+															}
+														/>
+													)}
+												/>
+												{errors?.lastName?.type && (
+													<p>{errors?.lastName?.type}</p>
 												)}
-											/>
-											<p>{errors?.firstName?.type}</p>
-										</GridItem>
-										<GridItem xs={12} sm={6} md={6}>
-											<Controller
-												name="lastName"
-												control={control}
-												defaultValue=""
-												render={({ field }) => (
-													<CustomInput
-														inputProps={{
-															...field,
-															inputProps: {
-																role: 'text',
-																'aria-label': 'Last Name',
-															},
-														}}
-														labelText="Last Name"
-														formControlProps={{
-															fullWidth: true,
-														}}
-														error={
-															errors?.lastName?.message &&
-															errors?.lastName?.message?.length > 0
-														}
-													/>
-												)}
-											/>
-											{errors?.lastName?.type && (
-												<p>{errors?.lastName?.type}</p>
-											)}
-										</GridItem>
-									</GridContainer>
-									<GridContainer>
-										<GridItem xs={12} sm={6} md={6}>
-											<Controller
-												name="email"
-												control={control}
-												defaultValue=""
-												render={({ field }) => (
-													<CustomInput
-														inputProps={{
-															...field,
-															inputProps: {
-																role: 'text',
-																'aria-label': 'Email',
-															},
-														}}
-														labelText="Email Address"
-														error={
-															errors?.email?.message &&
-															errors?.email?.message?.length > 0
-														}
-														formControlProps={{
-															fullWidth: true,
-														}}
-													/>
-												)}
-											/>
-											<p>{errors?.email?.message}</p>
-										</GridItem>
-										<GridItem xs={12} sm={6} md={6}>
-											<Controller
-												name="phoneNumber"
-												control={control}
-												defaultValue=""
-												render={({ field }) => (
-													<CustomInput
-														inputProps={{
-															...field,
-															inputProps: {
-																role: 'text',
-																'aria-label': 'Phone Number',
-															},
-														}}
-														labelText="Phone Number"
-														error={
-															errors?.phoneNumber?.message &&
-															errors?.phoneNumber?.message?.length > 0
-														}
-														formControlProps={{
-															fullWidth: true,
-														}}
-													/>
-												)}
-											/>
-											<p>{errors?.phoneNumber?.message}</p>
-										</GridItem>
-									</GridContainer>
-									<GridContainer>
-										<GridItem xs={12} sm={12} md={12}>
-											<Controller
-												name="description"
-												control={control}
-												defaultValue=""
-												render={({ field }) => (
-													<CustomInput
-														labelText="More info"
-														error={
-															errors?.description?.message &&
-															errors?.description?.message?.length > 0
-														}
-														formControlProps={{
-															fullWidth: true,
-														}}
-														inputProps={{
-															multiline: true,
-															rows: 5,
-															...field,
-															required: true,
-															inputProps: {
-																role: 'textbox',
-																'aria-label': 'Description',
-															},
-														}}
-													/>
-												)}
-											/>
-										</GridItem>
-									</GridContainer>
+											</GridItem>
+										</GridContainer>
+										<GridContainer>
+											<GridItem xs={12} sm={6} md={6}>
+												<Controller
+													name="email"
+													control={control}
+													defaultValue=""
+													render={({ field }) => (
+														<CustomInput
+															inputProps={{
+																...field,
+																inputProps: {
+																	role: 'text',
+																	'aria-label': 'Email',
+																},
+															}}
+															labelText="Email Address"
+															error={
+																errors?.email?.message &&
+																errors?.email?.message?.length > 0
+															}
+															formControlProps={{
+																fullWidth: true,
+															}}
+														/>
+													)}
+												/>
+												<p>{errors?.email?.message}</p>
+											</GridItem>
+											<GridItem xs={12} sm={6} md={6}>
+												<Controller
+													name="phoneNumber"
+													control={control}
+													defaultValue=""
+													render={({ field }) => (
+														<CustomInput
+															inputProps={{
+																...field,
+																inputProps: {
+																	role: 'text',
+																	'aria-label': 'Phone Number',
+																},
+															}}
+															labelText="Phone Number"
+															error={
+																errors?.phoneNumber?.message &&
+																errors?.phoneNumber?.message?.length > 0
+															}
+															formControlProps={{
+																fullWidth: true,
+															}}
+														/>
+													)}
+												/>
+												<p>{errors?.phoneNumber?.message}</p>
+											</GridItem>
+										</GridContainer>
+										<GridContainer>
+											<GridItem xs={12} sm={12} md={12}>
+												<Controller
+													name="description"
+													control={control}
+													defaultValue=""
+													render={({ field }) => (
+														<CustomInput
+															labelText="More info"
+															error={
+																errors?.description?.message &&
+																errors?.description?.message?.length > 0
+															}
+															formControlProps={{
+																fullWidth: true,
+															}}
+															inputProps={{
+																multiline: true,
+																rows: 5,
+																...field,
+																required: true,
+																inputProps: {
+																	role: 'textbox',
+																	'aria-label': 'Description',
+																},
+															}}
+														/>
+													)}
+												/>
+											</GridItem>
+										</GridContainer>
 
-									<p>{errors?.description?.message}</p>
-								</CardBody>
-								<CardFooter
-									sx={{
-										...formStyle.justifyContentBetween,
-									}}
-								>
-									<Box>
-										<LoadingButton
-											onClick={handleSubmit(onSubmitForm)}
-											disabled={loading}
-											color="primary"
-											loading={loading}
-											sx={{ fontWeight: 'bold' }}
-										>
-											Send Message
-										</LoadingButton>
-									</Box>
-								</CardFooter>
-							</form>
-						</Card>
+										<p>{errors?.description?.message}</p>
+									</CardBody>
+									<CardFooter
+										sx={{
+											...formStyle.justifyContentBetween,
+										}}
+									>
+										<Box>
+											<LoadingButton
+												onClick={handleSubmit(onSubmitForm)}
+												disabled={loading}
+												color="primary"
+												loading={loading}
+												sx={{ fontWeight: 'bold' }}
+											>
+												Send Message
+											</LoadingButton>
+										</Box>
+									</CardFooter>
+								</form>
+							</Card>
+						</motion.div>
 					</motion.div>
 				</Box>
 			</Box>

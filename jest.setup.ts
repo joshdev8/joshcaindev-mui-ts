@@ -11,3 +11,5 @@ jest.mock('next/image', () => ({
 		return 'Next image stub'; // whatever
 	},
 }));
+
+jest.mock('next/router', () => require('next-router-mock'));
