@@ -3,6 +3,7 @@ import { Container, Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import ProjectCard from '../src/components/Card/ProjectCard';
 import { cardVariants, cardVariants2 } from '../src/animations/cards';
+import Layout from '../src/components/Layout';
 
 const projects = [
 	{
@@ -13,7 +14,7 @@ const projects = [
 		description:
 			'Local home renovation business website - NextJS, Material UI, Vercel',
 		privateRepo: true,
-		repoLink: ''
+		repoLink: '',
 	},
 	{
 		projectUrl: 'https://limbcorp.com',
@@ -23,7 +24,7 @@ const projects = [
 		description:
 			'Local residential and commercial window blinds business website - NextJS, Material UI, Vercel',
 		privateRepo: true,
-		repoLink: ''
+		repoLink: '',
 	},
 	{
 		projectUrl: 'https://sunny-clock.com',
@@ -59,59 +60,61 @@ const projects = [
 
 const Projects: NextPage = () => {
 	return (
-		<Container
-			maxWidth="lg"
-			sx={{
-				my: 4,
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'center',
-				alignItems: 'center',
-			}}
-		>
-			<Typography variant="h4" component="h1" gutterBottom>
-				Some recent projects I have been working on
-			</Typography>
-			<Grid container spacing={2} sx={{ mt: 2 }}>
-				{projects?.map(
-					(
-						{
-							projectUrl,
-							imageUrl,
-							imageAlt,
-							title,
-							description,
-							privateRepo,
-							repoLink,
-						},
-						index
-					) => (
-						<Grid key={title} item xs={12} sm={12} md={6}>
-							<motion.div
-								initial="offscreen"
-								whileInView="onscreen"
-								viewport={{ once: true, amount: 0.2 }}
-							>
+		<Layout>
+			<Container
+				maxWidth="lg"
+				sx={{
+					my: 4,
+					display: 'flex',
+					flexDirection: 'column',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
+				<Typography variant="h4" component="h1" gutterBottom>
+					Some recent projects I have been working on
+				</Typography>
+				<Grid container spacing={2} sx={{ mt: 2 }}>
+					{projects?.map(
+						(
+							{
+								projectUrl,
+								imageUrl,
+								imageAlt,
+								title,
+								description,
+								privateRepo,
+								repoLink,
+							},
+							index
+						) => (
+							<Grid key={title} item xs={12} sm={12} md={6}>
 								<motion.div
-									className="card"
-									variants={index % 2 ? cardVariants2 : cardVariants}
+									initial="offscreen"
+									whileInView="onscreen"
+									viewport={{ once: true, amount: 0.2 }}
 								>
-									<ProjectCard
-										projectUrl={projectUrl}
-										imageUrl={imageUrl}
-										imageAlt={imageAlt}
-										title={title}
-										description={description}
-										privateRepo={privateRepo}
-										repoLink={repoLink}
-									/>
+									<motion.div
+										className="card"
+										variants={index % 2 ? cardVariants2 : cardVariants}
+									>
+										<ProjectCard
+											projectUrl={projectUrl}
+											imageUrl={imageUrl}
+											imageAlt={imageAlt}
+											title={title}
+											description={description}
+											privateRepo={privateRepo}
+											repoLink={repoLink}
+										/>
+									</motion.div>
 								</motion.div>
-							</motion.div>
-						</Grid>
-					)
-				)}
-			</Grid>
-		</Container>
+							</Grid>
+						)
+					)}
+				</Grid>
+			</Container>
+		</Layout>
 	);
 };
 

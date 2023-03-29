@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { Box, Link, Typography } from '@mui/material';
+import { SocialIcon } from 'react-social-icons';
 
 export default function Copyright() {
 	return (
@@ -19,6 +19,26 @@ export default function Copyright() {
 				</Link>{' '}
 				{new Date().getFullYear()}.
 			</Typography>
+			<Box
+				sx={{
+					my: 4,
+					display: 'flex',
+					flexDirection: 'row',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
+				<SocialIcon
+					url="https://linkedin.com/in/joshcain8"
+					style={{ height: 50, width: 50, marginRight: 10 }}
+					target="_blank"
+				/>
+				<SocialIcon
+					url="https://github.com/joshdev8"
+					style={{ height: 50, width: 50 }}
+					target="_blank"
+				/>
+			</Box>
 		</Box>
 	);
 }
