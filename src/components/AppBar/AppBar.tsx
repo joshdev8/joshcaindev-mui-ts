@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Link from '../Link';
 
@@ -37,6 +37,7 @@ const ResponsiveAppBar = () => {
 						sx={{
 							fontWeight: 'bold',
 							display: { xs: 'none', md: 'flex' },
+							mr: '1.5rem'
 						}}
 					>
 						josh cain
@@ -74,20 +75,21 @@ const ResponsiveAppBar = () => {
 							{pages.map(page => {
 								const path = page === 'home' ? '/' : `/${page}`;
 								return (
-									<Link href={path} key={page} underline="none">
-										<MenuItem
-											onClick={handleCloseNavMenu}
-											sx={{
-												'&.MuiButton-root': {
-													fontSize: '1.2rem',
-													lineHeight: '2.75',
-													padding: '6px 16px',
-												},
-											}}
-										>
+									<MenuItem
+										onClick={handleCloseNavMenu}
+										sx={{
+											'&.MuiButton-root': {
+												fontSize: '1.2rem',
+												lineHeight: '2.75',
+												padding: '6px 16px',
+											},
+										}}
+										key={page}
+									>
+										<Link href={path} underline="none">
 											{page}
-										</MenuItem>
-									</Link>
+										</Link>
+									</MenuItem>
 								);
 							})}
 						</Menu>
@@ -104,8 +106,8 @@ const ResponsiveAppBar = () => {
 						{pages.map(page => {
 							const path = page === 'home' ? '/' : `/${page}`;
 							return (
-								<Link key={path} href={path} underline="none">
-									<Button
+								<MenuItem key={path}>
+									<Link
 										onClick={handleCloseNavMenu}
 										sx={{
 											my: 2,
@@ -117,10 +119,12 @@ const ResponsiveAppBar = () => {
 											// lowercase
 											textTransform: 'lowercase',
 										}}
+										href={path}
+										underline="none"
 									>
 										{page}
-									</Button>
-								</Link>
+									</Link>
+								</MenuItem>
 							);
 						})}
 					</Box>

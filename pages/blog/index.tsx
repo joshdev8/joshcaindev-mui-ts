@@ -4,6 +4,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { motion } from 'framer-motion';
 import BlogCard from '../../src/components/Blog/BlogCard';
+import { cardVariants, cardVariants2 } from '../../src/animations/cards';
 
 interface Props {
 	posts: {
@@ -16,32 +17,6 @@ interface Props {
 		};
 	}[];
 }
-
-const cardVariants = {
-	offscreen: {
-		y: 100,
-		opacity: 0.2,
-	},
-	onscreen: {
-		y: 0,
-		opacity: 1,
-		transition: {
-			type: 'spring',
-			bounce: 0.4,
-			duration: 0.8,
-		},
-	},
-};
-const cardVariants2 = {
-	...cardVariants,
-	onscreen: {
-		...cardVariants.onscreen,
-		transition: {
-			...cardVariants.onscreen.transition,
-			duration: 1.5,
-		},
-	},
-};
 
 const Blog = ({ posts }: Props) => {
 	return (
@@ -66,16 +41,17 @@ const Blog = ({ posts }: Props) => {
 						p: 2,
 					}}
 				>
-					{posts.map(post => (
+					{posts.map((post, index) => (
 						<motion.div
 							initial="offscreen"
 							whileInView="onscreen"
 							viewport={{ once: true, amount: 0.2 }}
-							key={post.frontmatter.title}
-							whileHover={{ scale: 1.05 }}
-							whileTap={{ scale: 0.9 }}
+							key={post.slug}
 						>
-							<motion.div className="card" variants={cardVariants2}>
+							<motion.div
+								className="card"
+								variants={index % 2 ? cardVariants2 : cardVariants}
+							>
 								<Box>
 									<BlogCard post={post} />
 								</Box>

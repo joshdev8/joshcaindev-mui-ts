@@ -22,8 +22,8 @@ const TechCard = ({ tech: { name, image, description, url } }: ITech) => {
 		>
 			<Card
 				sx={{
-					height: 170,
-					width: 170,
+					height: 200,
+					width: 200,
 					margin: 2,
 					transition: '0.3s',
 					boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
@@ -41,7 +41,7 @@ const TechCard = ({ tech: { name, image, description, url } }: ITech) => {
 					sx={{
 						pt: '56.25%',
 						backgroundSize: 'contain',
-						mt: '10px'
+						m: '10px'
 					}}
 				/>
 				<CardContent
