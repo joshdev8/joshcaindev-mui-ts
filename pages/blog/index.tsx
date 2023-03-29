@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 import { motion } from 'framer-motion';
 import BlogCard from '../../src/components/Blog/BlogCard';
 import { cardVariants, cardVariants2 } from '../../src/animations/cards';
+import Layout from '../../src/components/Layout';
 
 interface Props {
 	posts: {
@@ -20,47 +21,49 @@ interface Props {
 
 const Blog = ({ posts }: Props) => {
 	return (
-		<Container maxWidth="lg">
-			<Box
-				sx={{
-					display: 'flex',
-					flexDirection: 'column',
-					justifyContent: 'center',
-					alignItems: 'center',
-				}}
-			>
-				<Grid
-					container
-					spacing={2}
+		<Layout>
+			<Container maxWidth="lg">
+				<Box
 					sx={{
-						mt: 2,
 						display: 'flex',
-						flexDirection: 'row',
+						flexDirection: 'column',
 						justifyContent: 'center',
 						alignItems: 'center',
-						p: 2,
 					}}
 				>
-					{posts.map((post, index) => (
-						<motion.div
-							initial="offscreen"
-							whileInView="onscreen"
-							viewport={{ once: true, amount: 0.2 }}
-							key={post.slug}
-						>
+					<Grid
+						container
+						spacing={2}
+						sx={{
+							mt: 2,
+							display: 'flex',
+							flexDirection: 'row',
+							justifyContent: 'center',
+							alignItems: 'center',
+							p: 2,
+						}}
+					>
+						{posts.map((post, index) => (
 							<motion.div
-								className="card"
-								variants={index % 2 ? cardVariants2 : cardVariants}
+								initial="offscreen"
+								whileInView="onscreen"
+								viewport={{ once: true, amount: 0.2 }}
+								key={post.slug}
 							>
-								<Box>
-									<BlogCard post={post} />
-								</Box>
+								<motion.div
+									className="card"
+									variants={index % 2 ? cardVariants2 : cardVariants}
+								>
+									<Box>
+										<BlogCard post={post} />
+									</Box>
+								</motion.div>
 							</motion.div>
-						</motion.div>
-					))}
-				</Grid>
-			</Box>
-		</Container>
+						))}
+					</Grid>
+				</Box>
+			</Container>
+		</Layout>
 	);
 };
 

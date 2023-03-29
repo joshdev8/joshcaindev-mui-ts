@@ -41,7 +41,7 @@ const TechCard = ({ tech: { name, image, description, url } }: ITech) => {
 					sx={{
 						pt: '56.25%',
 						backgroundSize: 'contain',
-						m: '10px'
+						m: '10px',
 					}}
 				/>
 				<CardContent
