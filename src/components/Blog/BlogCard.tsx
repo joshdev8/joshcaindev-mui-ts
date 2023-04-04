@@ -5,6 +5,7 @@ import {
 	Typography,
 	Divider,
 } from '@mui/material';
+import Image from 'next/image';
 import Link from '../Link';
 
 interface IPost {
@@ -37,15 +38,14 @@ const BlogCard = ({ post }: IPost) => {
 		>
 			<Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
 				<CardMedia
-					image={
-						cover_image ??
-						'https://images.unsplash.com/photo-1517436073-3b1b1b7f8d9c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMHBob25lfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80'
-					}
 					sx={{
 						pt: '56.25%',
 						textDecoration: 'none',
+						position: 'relative',
 					}}
-				/>
+				>
+					<Image src={cover_image} alt={title} fill />
+				</CardMedia>
 				<CardContent
 					sx={{
 						textAlign: 'left',

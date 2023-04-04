@@ -6,6 +6,7 @@ import {
 	CardActions,
 	Button,
 } from '@mui/material';
+import Image from 'next/image';
 import Link from '../Link';
 
 interface Props {
@@ -44,21 +45,23 @@ const ProjectCard = ({
 		<Link
 			href={projectUrl}
 			style={{ textDecoration: 'none' }}
-			// open in new tab
 			target="_blank"
 		>
 			<CardMedia
-				image={
-					imageUrl ??
-					'https://images.unsplash.com/photo-1517436073-3b1b1b7f8d9c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFja2dyb3VuZCUyMHBob25lfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80'
-				}
 				sx={{
 					pt: '56.25%',
 					textDecoration: 'none',
 					backgroundPosition: 'initial',
+					position: 'relative',
 				}}
 				aria-label={imageAlt}
-			/>
+			>
+				<Image
+					src={imageUrl}
+					alt={imageAlt}
+					fill
+				/>
+			</CardMedia>
 			<CardContent
 				sx={{
 					textAlign: 'left',
@@ -85,7 +88,6 @@ const ProjectCard = ({
 			<Link
 				href={repoLink}
 				style={{ textDecoration: 'none' }}
-				// open in new tab
 				target="_blank"
 			>
 				<Button
@@ -100,7 +102,6 @@ const ProjectCard = ({
 			<Link
 				href={projectUrl}
 				style={{ textDecoration: 'none' }}
-				// open in new tab
 				target="_blank"
 			>
 				<Button size="large" color="warning" sx={{ fontWeight: 'bold' }}>
