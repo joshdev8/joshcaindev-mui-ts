@@ -24,6 +24,8 @@ export default function MyApp(props: MyAppProps) {
 		<CacheProvider value={emotionCache}>
 			<Head>
 				<meta name="viewport" content="initial-scale=1, width=device-width" />
+				<title>Josh Cain - UI Engineer</title>
+				<meta name="description" content="Josh Cain - Portfolio Site" />
 			</Head>
 			<ThemeProvider theme={theme}>
 				<ResponsiveAppBar />

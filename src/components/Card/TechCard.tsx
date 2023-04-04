@@ -52,7 +52,7 @@ const TechCard = ({ tech: { name, image, description, url } }: ITech) => {
 				>
 					<Typography
 						sx={{ textDecoration: 'none', fontSize: '0.8rem' }}
-						variant={'h6'}
+						variant={'h5'}
 						gutterBottom
 					>
 						{name}
