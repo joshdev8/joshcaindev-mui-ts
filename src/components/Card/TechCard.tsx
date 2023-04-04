@@ -1,4 +1,5 @@
 import { Card, CardMedia, CardContent, Typography } from '@mui/material';
+import Image from 'next/image';
 import Link from '../../../src/components/Link';
 
 interface ITech {
@@ -37,13 +38,15 @@ const TechCard = ({ tech: { name, image, description, url } }: ITech) => {
 				aria-label={description}
 			>
 				<CardMedia
-					image={image}
 					sx={{
 						pt: '56.25%',
 						backgroundSize: 'contain',
 						m: '10px',
+						position: 'relative',
 					}}
-				/>
+				>
+					<Image src={image} alt={name} fill />
+				</CardMedia>
 				<CardContent
 					sx={{
 						textAlign: 'left',
