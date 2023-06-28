@@ -22,7 +22,7 @@
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@vercel/analytics": "^1.0.1",
     "axios": "^1.4.0",
-    "framer-motion": "^10.12.16",
+    "framer-motion": "^10.12.17",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.0",
     "marked": "^5.0.2",
