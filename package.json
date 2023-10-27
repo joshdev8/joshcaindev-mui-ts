@@ -26,7 +26,7 @@
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.0",
     "marked": "^7.0.4",
-    "next": "13.4.10",
+    "next": "13.5.0",
     "nodemailer": "^6.9.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
