@@ -35,7 +35,7 @@ type FormValues = {
 	firstName: string;
 	lastName: string;
 	email: string;
-	phoneNumber: string;
+	phoneNumber?: string | undefined;
 	description: string;
 };
 
