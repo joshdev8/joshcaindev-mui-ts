@@ -52,7 +52,7 @@
     "next-router-mock": "^0.9.9",
     "prettier": "^3.1.1",
     "ts-jest": "^29.1.1",
-    "typescript": "5.2.2",
+    "typescript": "5.3.3",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.1",
     "prettier-eslint": "^16.1.1",
