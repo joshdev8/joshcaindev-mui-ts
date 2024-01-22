@@ -106,4 +106,4 @@ const handler = async (req: Request, res: Response) => {
 	}
 };
 
-module.exports = allowCors(handler);
+export default allowCors(handler);
