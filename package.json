@@ -24,7 +24,7 @@
     "framer-motion": "^11.0.5",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.0",
-    "marked": "^11.2.0",
+    "marked": "^12.0.0",
     "next": "13.5.4",
     "nodemailer": "^6.9.9",
     "react": "18.2.0",
