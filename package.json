@@ -26,7 +26,7 @@
     "hamburger-react": "^2.5.0",
     "marked": "^12.0.2",
     "next": "14.2.2",
-    "nodemailer": "^6.9.12",
+    "nodemailer": "^6.9.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.51.3",
