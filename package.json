@@ -20,7 +20,7 @@
     "@mui/lab": "5.0.0-alpha.163",
     "@mui/material": "^5.15.18",
     "@vercel/analytics": "^1.2.2",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "framer-motion": "^11.1.7",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.1",
