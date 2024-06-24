@@ -18,7 +18,7 @@
     "@hookform/resolvers": "^3.4.2",
     "@mui/icons-material": "^5.15.19",
     "@mui/lab": "5.0.0-alpha.170",
-    "@mui/material": "^5.15.18",
+    "@mui/material": "^5.15.20",
     "@vercel/analytics": "^1.2.2",
     "axios": "^1.7.2",
     "framer-motion": "^11.2.10",
