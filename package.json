@@ -21,7 +21,7 @@
     "@mui/material": "^5.15.21",
     "@vercel/analytics": "^1.2.2",
     "axios": "^1.7.2",
-    "framer-motion": "^11.2.11",
+    "framer-motion": "^11.2.12",
     "gray-matter": "^4.0.3",
     "hamburger-react": "^2.5.1",
     "marked": "^13.0.0",
