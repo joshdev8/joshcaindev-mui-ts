@@ -23,7 +23,7 @@ describe('ProjectCard', () => {
 					description="test-description"
 					privateRepo={false}
 					repoLink="https://github.com"
-				/>
+				/>,
 			);
 		}).not.toThrow();
 	});
@@ -48,30 +48,30 @@ describe('ProjectCard', () => {
 				description="test-description"
 				privateRepo={false}
 				repoLink="https://github.com"
-			/>
+			/>,
 		);
 		expect(
 			screen.getByRole('heading', {
 				name: /test-title/i,
-			})
+			}),
 		).toHaveTextContent('test-title');
 
 		expect(
 			screen.getByRole('img', {
 				name: /test-alt/i,
-			})
+			}),
 		).toBeVisible();
 
 		expect(
 			screen.getByRole('link', {
 				name: /test-title/i,
-			})
+			}),
 		).toHaveAttribute('href', '/test.htm');
 
 		expect(
 			screen.getByRole('link', {
 				name: /github/i,
-			})
+			}),
 		).toHaveAttribute('href', 'https://github.com');
 
 		expect(screen.getByText(/test-description/i)).toBeVisible();

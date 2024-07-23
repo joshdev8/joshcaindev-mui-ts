@@ -79,7 +79,7 @@ export async function getStaticProps() {
 		// get frontmatter
 		const markdownWithMeta = fs.readFileSync(
 			path.join('public', 'posts', filename),
-			'utf-8'
+			'utf-8',
 		);
 
 		const { data: frontmatter } = matter(markdownWithMeta);

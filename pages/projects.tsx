@@ -86,7 +86,7 @@ const Projects: NextPage = () => {
 								privateRepo,
 								repoLink,
 							},
-							index
+							index,
 						) => (
 							<Grid key={title} item xs={12} sm={12} md={6}>
 								<motion.div
@@ -110,7 +110,7 @@ const Projects: NextPage = () => {
 									</motion.div>
 								</motion.div>
 							</Grid>
-						)
+						),
 					)}
 				</Grid>
 			</Container>

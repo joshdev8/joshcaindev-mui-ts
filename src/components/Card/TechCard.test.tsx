@@ -12,12 +12,12 @@ describe('TechCard', () => {
 					description: 'test description',
 					url: 'https://github.com',
 				}}
-			/>
+			/>,
 		);
 		expect(
 			screen.getByRole('heading', {
 				name: /test/i,
-			})
+			}),
 		).toHaveTextContent('test');
 
 		const link = screen.getByRole('link', {

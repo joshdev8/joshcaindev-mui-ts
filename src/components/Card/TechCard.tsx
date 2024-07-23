@@ -1,4 +1,4 @@
-import { Card, CardMedia, CardContent, Typography } from '@mui/material';
+import { Card, CardMedia } from '@mui/material';
 import Image from 'next/image';
 import Link from '../../../src/components/Link';
 
@@ -23,8 +23,8 @@ const TechCard = ({ tech: { name, image, description, url } }: ITech) => {
 		>
 			<Card
 				sx={{
-					height: 200,
-					width: 200,
+					height: 60,
+					width: 75,
 					margin: 2,
 					transition: '0.3s',
 					boxShadow: '0 8px 40px -12px rgba(0,0,0,0.3)',
@@ -39,28 +39,14 @@ const TechCard = ({ tech: { name, image, description, url } }: ITech) => {
 			>
 				<CardMedia
 					sx={{
-						pt: '56.25%',
-						backgroundSize: 'contain',
-						m: '10px',
+						pt: '60%',
+						m: 1,
+						backgroundSize: 'cover',
 						position: 'relative',
 					}}
 				>
 					<Image src={image} alt={name} fill />
 				</CardMedia>
-				<CardContent
-					sx={{
-						textAlign: 'left',
-						padding: 3,
-					}}
-				>
-					<Typography
-						sx={{ textDecoration: 'none', fontSize: '0.8rem' }}
-						variant={'h5'}
-						gutterBottom
-					>
-						{name}
-					</Typography>
-				</CardContent>
 			</Card>
 		</Link>
 	);

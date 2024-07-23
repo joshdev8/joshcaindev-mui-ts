@@ -42,11 +42,7 @@ const ProjectCard = ({
 			},
 		}}
 	>
-		<Link
-			href={projectUrl}
-			style={{ textDecoration: 'none' }}
-			target="_blank"
-		>
+		<Link href={projectUrl} style={{ textDecoration: 'none' }} target="_blank">
 			<CardMedia
 				sx={{
 					pt: '56.25%',
@@ -56,11 +52,7 @@ const ProjectCard = ({
 				}}
 				aria-label={imageAlt}
 			>
-				<Image
-					src={imageUrl}
-					alt={imageAlt}
-					fill
-				/>
+				<Image src={imageUrl} alt={imageAlt} fill />
 			</CardMedia>
 			<CardContent
 				sx={{
@@ -85,11 +77,7 @@ const ProjectCard = ({
 			</CardContent>
 		</Link>
 		<CardActions>
-			<Link
-				href={repoLink}
-				style={{ textDecoration: 'none' }}
-				target="_blank"
-			>
+			<Link href={repoLink} style={{ textDecoration: 'none' }} target="_blank">
 				<Button
 					size="large"
 					color="primary"

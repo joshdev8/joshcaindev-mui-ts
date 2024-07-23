@@ -64,7 +64,7 @@ const RegularLoadingButton = React.forwardRef<HTMLButtonElement, Props>(
 				{children}
 			</LoadingButton>
 		);
-	}
+	},
 );
 
 export default RegularLoadingButton;

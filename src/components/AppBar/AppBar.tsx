@@ -20,7 +20,7 @@ const ResponsiveAppBar = () => {
 	// get current page path
 	const { asPath } = useRouter();
 	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-		null
+		null,
 	);
 
 	const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {

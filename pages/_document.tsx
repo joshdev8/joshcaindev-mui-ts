@@ -15,10 +15,7 @@ export default class MyDocument extends Document {
 						property="og:description"
 						content="Josh Cain - Portfolio Site"
 					/>
-					<meta
-						property="og:title"
-						content="Josh Cain - Portfolio"
-					/>
+					<meta property="og:title" content="Josh Cain - Portfolio" />
 					<link
 						rel="stylesheet"
 						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
