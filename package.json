@@ -37,7 +37,7 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@tsconfig/next": "^2.0.3",
-    "@types/jest": "^29.5.12",
+    "@types/jest": "^29.5.13",
     "@types/marked": "^6.0.0",
     "@types/node": "22.7.5",
     "@types/nodemailer": "^6.4.16",
