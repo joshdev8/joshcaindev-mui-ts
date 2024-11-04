@@ -29,7 +29,7 @@
     "nodemailer": "^6.9.16",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-hook-form": "^7.53.0",
+    "react-hook-form": "^7.53.1",
     "react-social-icons": "^6.18.0",
     "yup": "^1.4.0"
   },
