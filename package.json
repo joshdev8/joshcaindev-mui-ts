@@ -23,7 +23,7 @@
     "axios": "^1.7.9",
     "framer-motion": "^11.17.0",
     "gray-matter": "^4.0.3",
-    "hamburger-react": "^2.5.1",
+    "hamburger-react": "^2.5.2",
     "marked": "^15.0.5",
     "next": "15.1.4",
     "nodemailer": "^6.9.16",
