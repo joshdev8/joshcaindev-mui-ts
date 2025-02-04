@@ -15,7 +15,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.13.5",
-    "@hookform/resolvers": "^3.9.1",
+    "@hookform/resolvers": "^3.10.0",
     "@mui/icons-material": "^5.16.13",
     "@mui/lab": "5.0.0-alpha.175",
     "@mui/material": "^5.16.14",
